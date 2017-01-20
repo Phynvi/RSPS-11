@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+.head{
+	height: 14.5%; 
+	background-color: #ddd;
+	 display: -webkit-flex;
+	  border: solid 1px;
+	   align-items: center;
+}
+
+.headText{
+	width: 100%; 
+	font-size: 1.64rem;
+	line-height: 110%; 
+	margin: 0.82rem 0 0.656rem 0; 
+	text-align: center;
+}
