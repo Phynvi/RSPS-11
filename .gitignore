@@ -4,13 +4,12 @@
 bin/
 tmp/
 *.tmp
+*.class
 *.bak
 *.swp
 *~.nib
 local.properties
 .settings/
-classes/
-build/
 .loadpath
 .recommenders
 
