@@ -31,11 +31,11 @@ public class HistoryServlet extends HttpServlet {
     	 
     	 request.setAttribute("list", list);
     	 
-    	 request.setAttribute("pageLimit", getPaging(currentPage).get("pageLimit"));  //4
-    	 request.setAttribute("totalPage",getPaging(currentPage).get("totalPage")); // 4
-    	 request.setAttribute("currentPage",getPaging(currentPage).get("page")); // 1
-    	 request.setAttribute("defaultPageLimit",getPaging(currentPage).get("defaultPageLimit")); // 10
-    	 request.setAttribute("startPage",getPaging(currentPage).get("startPage")); // 1
+    	 request.setAttribute("pageLimit", getPaging(currentPage).get("pageLimit"));  
+    	 request.setAttribute("totalPage",getPaging(currentPage).get("totalPage")); 
+    	 request.setAttribute("currentPage",getPaging(currentPage).get("page")); 
+    	 request.setAttribute("defaultPageLimit",getPaging(currentPage).get("defaultPageLimit")); 
+    	 request.setAttribute("startPage",getPaging(currentPage).get("startPage")); 
     	 
 		dispatcher.forward(request, response);
 	}
