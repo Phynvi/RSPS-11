@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+.tbContainer{
+    width: 90%;
+    display: table;
+    margin-left: 5%;
+    text-align: center;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: none;
+    border-spacing: 0;
+}
+
+.tbhead{
+    border-bottom: 1px solid #d0d0d0;
+    box-sizing: inherit;
+}
+
+table.tbContainer>thead>tr, table.tbContainer>tbody>tr {
+    border-bottom: 1px solid #d0d0d0;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td, th {
+    padding: 10px 5px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+
+table, th, td {
+    border: none;
+}
+
+
+.pagination{
+	margin-top: 20px;
+}
+
+.pageNo{
+    text-decoration: none;
+    color: black;
+}

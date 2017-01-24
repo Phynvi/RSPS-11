@@ -15,3 +15,16 @@
 	margin: 0.82rem 0 0.656rem 0; 
 	text-align: center;
 }
+
+.resultDescrition{
+    height: 398px;
+    overflow: hidden;
+}
+
+
+/* top */
+.menu {
+	 text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
