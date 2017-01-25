@@ -28,18 +28,20 @@ public class HistoryServlet extends HttpServlet {
     	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/history/history_list.jsp");
     	String currentPage= (String) request.getParameter("page");
     	List<Map<String, Object>> list =getHistory(currentPage);
-    	 
     	 request.setAttribute("list", list);
-    	 
     	 request.setAttribute("pageLimit", getPaging(currentPage).get("pageLimit"));  
     	 request.setAttribute("totalPage",getPaging(currentPage).get("totalPage")); 
     	 request.setAttribute("currentPage",getPaging(currentPage).get("page")); 
     	 request.setAttribute("defaultPageLimit",getPaging(currentPage).get("defaultPageLimit")); 
     	 request.setAttribute("startPage",getPaging(currentPage).get("startPage")); 
-    	 
-		dispatcher.forward(request, response);
+    	 dispatcher.forward(request, response);
 	}
     
+	/**
+	 * paging에 필요한 요소를 Map에 담음.
+	 * @param page
+	 * @return  Map<String, Integer> paging
+	 */
 	public Map<String, Integer> getPaging(String page){
 		 Map<String, Integer>paging = new HashMap<String, Integer>();
 		 Map<String, Object> params = new HashMap<String, Object>();
@@ -59,11 +61,9 @@ public class HistoryServlet extends HttpServlet {
 			}
 		 
 		 totalCnt = getHistoryCount( params) ;
-		 
 		 totalPage = PagingUtils.calculateTotalPage(limit, totalCnt);
 	 	 startPage = PagingUtils.startPage(currentPage, defaultPageLimit);
 	  	 pageLimit = PagingUtils.pageLimit(defaultPageLimit, totalPage, startPage);
-		 		
 	  	 paging.put("pageLimit", pageLimit);
 	  	 paging.put("totalPage", totalPage);
 	  	 paging.put("page", currentPage);
@@ -73,6 +73,11 @@ public class HistoryServlet extends HttpServlet {
 		 return paging;
 	}
 	
+	/**
+	 * 가위바위보 이력 List를 HistoryDAO에서 가져온다.
+	 * @param page
+	 * @return List<Map<String, Object>> list
+	 */
 	public List<Map<String, Object>> getHistory(String page){
 		HistoryDAO dao = new HistoryDAO();
 		PagingUtil PagingUtil = new PagingUtil();
@@ -100,6 +105,11 @@ public class HistoryServlet extends HttpServlet {
 		return list;
 	}
 	
+	/**
+	 *  총 가위바위보 게임수를 HistoryDAO에서 받아온다
+	 * @param params
+	 * @return int cnt
+	 */
 	public int getHistoryCount(Map<String, Object> params){
 		HistoryDAO dao = new HistoryDAO();
 		int cnt =0;

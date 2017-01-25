@@ -28,7 +28,7 @@ $(function(){
 	        			 userType : type,
 	        		  	 vsResult : result
 	                    },
-	                    success : function(data) {
+	                    success : function(data) {	
 	                    	if(result == 0){
 	                    		resultText = "당신은" + typeText +"를 냈고 PC도 " +  pcTypeText +"를 내서 비겼습니다.";
 	                    	}else if(result == -1 || result == 2){

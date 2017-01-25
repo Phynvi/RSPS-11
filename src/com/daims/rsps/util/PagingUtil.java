@@ -21,7 +21,6 @@ public class PagingUtil {
 		// 1~10 = 1
 		// 11~20 = 11
 		startPage = ((page - 1) / pageLimit * pageLimit) + 1;
-
 		return startPage;
 	}
 	// 한 페이지에 보여줄 list갯수.

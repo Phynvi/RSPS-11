@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+
+.boardtitle{
+	cursor: pointer;
+}
+
+.write{
+	margin-right: 5%; 
+	margin-top: 20px; 
+	cursor: pointer;
+}
+
+.boardContainer{
+    width: 90%;
+    display: table;
+    margin-left: 5%;
+    text-align: left;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: none;
+    border-spacing: 0;
+}
+
+table.boardContainer>tbody>tr>th, table.boardContainer>tbody>tr>td {
+       border: 1px solid #d0d0d0;
+}

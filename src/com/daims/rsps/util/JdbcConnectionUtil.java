@@ -5,13 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class JdbcConnectionUtil {
 	
 	private static  String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static  String id = "yul";
-	private static String pw = "1234";
+	private static  String id = "****";
+	private static String pw = "****";
 	
 	static {
 				try {
@@ -26,26 +25,41 @@ public class JdbcConnectionUtil {
 		try {
 			 conn = DriverManager.getConnection(url, id, pw);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace();	
 		}
 		return conn;
 	}
 	
-	public static void closeConnection( Connection conn,PreparedStatement  stmt,  ResultSet rs){
+	public static void closeConnection( Connection conn,PreparedStatement  stmt,  ResultSet rs) throws SQLException{
 		try{
 			rs.close();
 			stmt.close();
 			conn.close();
 		}catch(Exception e){
 			e.printStackTrace();
+			if(rs !=null){
+				rs.close();
+			}
+			if(stmt !=null){
+				stmt.close();
+			}
+			if(conn !=null){
+				conn.close();
+			}
 		}
 	}
-	public static void closeConnection( Connection conn,PreparedStatement  stmt){
+	public static void closeConnection( Connection conn,PreparedStatement  stmt) throws SQLException{
 		try{
 			stmt.close();
 			conn.close();
 		}catch(Exception e){
 			e.printStackTrace();
+			if(stmt !=null){
+				stmt.close();
+			}
+			if(conn !=null){
+				conn.close();
+			}
 		}
 	}
 }

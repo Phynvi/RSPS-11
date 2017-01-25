@@ -23,8 +23,33 @@
 
 
 /* top */
-.menu {
+.menu{
+	height: 10%;
+	border: solid 1px; 
+	display: flex;
+	min-height: 88px;
+}
+
+.menudv{
+	width: 33.3%;
+    border: solid 1px;
+    text-align: center;
+    min-height: 88px; 
+}
+
+.menua {
 	 text-decoration: none;
     color: black;
     font-weight: 800;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 88px; 
+}
+
+.menusp {
+    display: block;
+    padding-top: 35%;
+    font-size: 20px;
+    min-height: 88px;    
 }

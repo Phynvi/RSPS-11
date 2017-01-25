@@ -22,19 +22,26 @@ public class GameServlet extends HttpServlet {
         super();
     }
 
-	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/game/game_view.jsp");
-		String pcType = req.getParameter("pcType");
-		String userType = req.getParameter("userType");
-		String vsResult = req.getParameter("vsResult");
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/game/game_view.jsp");
+		String pcType = request.getParameter("pcType");
+		String userType = request.getParameter("userType");
+		String vsResult = request.getParameter("vsResult");
 		if(pcType!=null  && userType!=null  && vsResult!=null  ){
 			addGame(pcType, userType, vsResult);
-			dispatcher.forward(req, res);
+			dispatcher.forward(request, response);
 		}else{
-			dispatcher.forward(req, res);
+			dispatcher.forward(request, response);
 		}
 	}
 	
+	/**
+	 * 게임을 할 때 마다 게임을 결과를 저장한다.
+	 * @param pcType
+	 * @param userType
+	 * @param vsResult
+	 * @return int cnt 
+	 */
 	public int addGame(String pcType, String userType, String vsResult) {
 		GameDAO dao = new GameDAO();
 		int cnt = -1;

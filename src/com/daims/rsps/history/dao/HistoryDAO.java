@@ -16,12 +16,18 @@ import com.daims.rsps.util.JdbcConnectionUtil;
 
 public class HistoryDAO {
 	 
+	/**
+	 * 가위바위보 이력 List를 가져온다.
+	 * @param params
+	 * @return List<Map<String, Object>> list
+	 * @throws SQLException
+	 */
 	public List<Map<String, Object>> getHistoryList(Map<String, Object> params) throws SQLException{
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		Connection conn = JdbcConnectionUtil.getConnection();
 		int limit = (int) params.get("limit");
 		int startIndex = (int) params.get("startIndex");
-		String sql = "select * from(select HISTORY_ID, P_TYPE, U_TYPE, VS_RESULT , TO_CHAR(REG_DATE, 'YYYY-MM-DD HH:mm:ss') as REG_DATE , rownum as rn from RSPS_HISTORY order by HISTORY_ID desc)a where a.rn >="+startIndex+" and a.rn <="+limit;
+		String sql = "SELECT * FROM(SELECT HISTORY_ID, P_TYPE, U_TYPE, VS_RESULT , TO_CHAR(REG_DATE, 'YYYY-MM-DD HH:mm:ss') as REG_DATE , ROWNUM AS RN FROM RSPS_HISTORY ORDER BY HISTORY_ID DESC)A WHERE A.RN >="+startIndex+" AND A.RN <="+limit;
 		PreparedStatement stmt =    conn.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		
@@ -45,6 +51,12 @@ public class HistoryDAO {
 		return list; 
 	}
 	
+	/**
+	 * 총 가위바위보 게임수를 가지고 온다
+	 * @param params
+	 * @return int cnt
+	 * @throws SQLException
+	 */
 	public int getHistoryCnt(Map<String, Object> params) throws SQLException{
 		Connection conn = JdbcConnectionUtil.getConnection();
 		
