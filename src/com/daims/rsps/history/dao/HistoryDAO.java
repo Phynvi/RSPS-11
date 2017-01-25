@@ -27,7 +27,7 @@ public class HistoryDAO {
 		Connection conn = JdbcConnectionUtil.getConnection();
 		int limit = (int) params.get("limit");
 		int startIndex = (int) params.get("startIndex");
-		String sql = "SELECT * FROM(SELECT HISTORY_ID, P_TYPE, U_TYPE, VS_RESULT , TO_CHAR(REG_DATE, 'YYYY-MM-DD HH:mm:ss') as REG_DATE , ROWNUM AS RN FROM RSPS_HISTORY ORDER BY HISTORY_ID DESC)A WHERE A.RN >="+startIndex+" AND A.RN <="+limit;
+		String sql = "SELECT * FROM(SELECT HISTORY_ID, P_TYPE, U_TYPE, VS_RESULT , TO_CHAR(REG_DATE, 'YYYY-MM-DD HH:mm:ss') as REG_DATE , ROWNUM AS RN FROM RSPS_HISTORY ORDER BY HISTORY_ID DESC)A WHERE A.RN >="+startIndex+" AND A.RN <="+limit + " ORDER BY A.RN ASC";
 		PreparedStatement stmt =    conn.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		
@@ -36,16 +36,38 @@ public class HistoryDAO {
 		 
 		 Map<String, Object> map;
 		 String column;
+		 String vs_result="";
+		 int col_vs_result=0;
 		 while (rs.next())
 	        {
 	            map = new HashMap<String, Object>();
 	            for (int indexOfcolumn = 0; indexOfcolumn < sizeOfColumn; indexOfcolumn++)
 	            {
 	                column = metaData.getColumnName(indexOfcolumn + 1);
-	                map.put(column, rs.getString(column));
+	                if(column.equals("VS_RESULT")){
+	                	col_vs_result  = Integer.parseInt(rs.getString(column).trim()); 
+        				if(col_vs_result == 0){
+	                		vs_result = "비겼음";
+	                	}
+	                	if(col_vs_result == -1){
+	                		vs_result = "졌음";
+	                	}
+	                	if(col_vs_result == 2){
+	                		vs_result = "졌음";
+	                	}
+	                	if(col_vs_result == 1){
+	                		vs_result = "이겼음";
+	                	}
+	                	if(col_vs_result == -2){
+	                		vs_result = "이겼음";
+	                	}
+	                	map.put(column,vs_result);
+	                }else{
+	                	map.put(column, rs.getString(column));
+	                }
 	            }
-	            // list에 저장
 	            list.add(map);
+	            
 	        }
 		 JdbcConnectionUtil.closeConnection(conn, stmt, rs);
 		return list; 

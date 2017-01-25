@@ -23,12 +23,34 @@
 				<c:forEach items="${list }" var="list" varStatus="status">
 						<tr>
 							<td>
-								${status.count }
+								${list.RN }
 								<input type="hidden" id="HISTORY_ID"  name="HISTORY_ID"  value="${list.HISTORY_ID }">
 							</td>
-							<td>${list.P_TYPE }</td>
-							<td>${list.U_TYPE }</td>
-							<td>${list.VS_RESULT }</td>
+							   <c:choose>
+							       <c:when test="${list.P_TYPE == '1'}">
+							           <td>가위</td>
+							       </c:when>
+							       <c:when test="${list.P_TYPE == '2'}">
+							           <td>바위</td>
+							       </c:when>
+							       <c:when test="${list.P_TYPE == '3'}">
+							           <td>보</td>
+							       </c:when>
+							   </c:choose>
+						
+							   <c:choose>
+							       <c:when test="${list.U_TYPE == '1'}">
+							           <td>가위</td>
+							       </c:when>
+							       <c:when test="${list.U_TYPE == '2'}">
+							           <td>바위</td>
+							       </c:when>
+							       <c:when test="${list.U_TYPE == '3'}">
+							           <td>보</td>
+							       </c:when>
+							   </c:choose>
+				
+							  <td>${list.VS_RESULT }</td>
 							<td>${list.REG_DATE }</td>
 						</tr>
 				</c:forEach>
