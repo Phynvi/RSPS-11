@@ -9,8 +9,8 @@ import java.sql.SQLException;
 public class JdbcConnectionUtil {
 	
 	private static  String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private static  String id = "****";
-	private static String pw = "****";
+	private static  String id = "yul";
+	private static String pw = "1234";
 	
 	static {
 				try {
