@@ -42,7 +42,7 @@
 			</tbody>
 			</table>
 			<div align="right">
-				<a href="${pageContext.request.contextPath}/write"><button class="write">글쓰기</button></a>
+				<a href="${pageContext.request.contextPath}/write"><button class="write">작성하기</button></a>
 			</div>
 		</div>
 		<jsp:include page="../layout/bottom.jsp" flush="false"/> 

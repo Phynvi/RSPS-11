@@ -34,7 +34,7 @@
 				</table>
 			</form>
 			<div align="right">
-				<button id="writeBtn">글쓰기</button>
+				<button id="writeBtn">작성</button>
 				<button class="write" type="reset" id="cancleBtn">취소</button>
 			</div>
 		</div>
