@@ -2,14 +2,14 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="../layout/htmlHead.jsp" flush="false"/>
 <body>
-	<div style="width: 100%;">
+	<div class="wrapper">
  		<jsp:include page="../layout/header.jsp" flush="false"/> 
  		<jsp:include page="../layout/top.jsp" flush="false"/> 
 		
-		<div id="container" style="height: 60%; border: solid 1px;">
-			<div style="display: flex;  padding-top: 10px;" align="center">
-				<span style="padding-bottom: 3px; padding-right: 5px;">당신이 낼 것은?</span> 
-				<select id="type" name="u_type">
+		<div id="container">
+			<div class="gameStart" align="center">
+				<span class="gameQA">당신이 낼 것은?</span> 
+				<select id="type" name="u_type" class="choice">
 					<option value="1">가위</option>
 					<option value="2">바위</option>
 					<option value="3">보</option>

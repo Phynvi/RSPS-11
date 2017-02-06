@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../layout/htmlHead.jsp" flush="false"/>
 <body>
-	<div style="width: 100%;">
+	<div class="wrapper">
  		<jsp:include page="../layout/header.jsp" flush="false"/> 
  		<jsp:include page="../layout/top.jsp" flush="false"/> 
 		
-		<div id="container" style="height: 60%; border: solid 1px;">
+		<div id="container">
 			<form id="writeFrm" action="${pageContext.request.contextPath }/write" method="post" accept-charset="utf-8">
 				<table class="boardContainer" >
 				<colgroup>

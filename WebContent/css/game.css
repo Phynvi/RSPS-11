@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+
+.gameStart {
+	padding-top: 20px;
+	margin: auto; 
+}
+
+.gameQA {
+	 padding-bottom: 3px; 
+	 padding-right: 5px;
+}
+
+
+.choice {
+	height: 24px;
+}
+
+#start {
+	 vertical-align: top;
+	 margin-left: -5; 
+	 height: 24px;
+}
+	
+.resultDescription {
+	text-align: center;
+}
