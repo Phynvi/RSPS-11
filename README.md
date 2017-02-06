@@ -25,7 +25,7 @@
     * 작성자
     * 작성일
     
-<img src="https://github.com/leeyura/RSPS/blob/master/WebContent/img/rspsNotice(2).jpg" height="20%" width="695px"></img>
+<img src="https://github.com/leeyura/RSPS/blob/master/WebContent/img/rspsNotice(3).jpg" height="20%" width="695px"></img>
 
 * 제목을 클릭하면 클릭한 제목 하단으로 내용이 나타나 해당 글 내용을 볼 수 있다.
 
@@ -33,4 +33,4 @@
 
 * 작성하기 버튼을 클릭시 작성자, 제목, 내용을 입력하여 공지사항글을 작성할 수 있다.
 
-<img src="https://github.com/leeyura/RSPS/blob/master/WebContent/img/rspsAddNotice(2).jpg" height="20%" width="695px"></img>
+<img src="https://github.com/leeyura/RSPS/blob/master/WebContent/img/rspsAddNotice(3).jpg" height="20%" width="695px"></img>
