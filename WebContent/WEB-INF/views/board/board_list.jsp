@@ -41,7 +41,7 @@
 			</c:if>
 			</tbody>
 			</table>
-			<div align="right">
+			<div align="right" class="btnPlace">
 				<a href="${pageContext.request.contextPath}/write"><button class="write">작성하기</button></a>
 			</div>
 		</div>

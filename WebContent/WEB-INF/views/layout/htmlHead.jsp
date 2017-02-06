@@ -8,4 +8,5 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/history.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/css/board.css" type="text/css">
 <script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/menu.js"></script>
 </head>

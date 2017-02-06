@@ -33,9 +33,9 @@
 					</tr>
 				</table>
 			</form>
-			<div align="right">
-				<button id="writeBtn">작성</button>
-				<button class="write" type="reset" id="cancleBtn">취소</button>
+			<div align="right" class="btnPlace">
+				<button  class="write" id="writeBtn">작성</button>
+				<button  class="write" type="reset" id="cancleBtn">취소</button>
 			</div>
 		</div>
 		<jsp:include page="../layout/bottom.jsp" flush="false"/> 

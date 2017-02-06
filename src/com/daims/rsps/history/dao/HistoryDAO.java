@@ -47,19 +47,19 @@ public class HistoryDAO {
 	                if(column.equals("VS_RESULT")){
 	                	col_vs_result  = Integer.parseInt(rs.getString(column).trim()); 
         				if(col_vs_result == 0){
-	                		vs_result = "비겼음";
+	                		vs_result = "무승부";
 	                	}
 	                	if(col_vs_result == -1){
-	                		vs_result = "졌음";
+	                		vs_result = "패배";
 	                	}
 	                	if(col_vs_result == 2){
-	                		vs_result = "졌음";
+	                		vs_result = "패배";
 	                	}
 	                	if(col_vs_result == 1){
-	                		vs_result = "이겼음";
+	                		vs_result = "승리";
 	                	}
 	                	if(col_vs_result == -2){
-	                		vs_result = "이겼음";
+	                		vs_result = "승리";
 	                	}
 	                	map.put(column,vs_result);
 	                }else{

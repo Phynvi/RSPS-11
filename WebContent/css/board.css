@@ -5,10 +5,22 @@
 	cursor: pointer;
 }
 
-.write{
-	margin-right: 5%; 
-	margin-top: 20px; 
-	cursor: pointer;
+.btnPlace {
+	margin-right: 5%;
+}
+
+.write {
+    margin-top: 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    padding-bottom: 4px;
+}
+
+#writeFrm{
+	margin-bottom: 0px;
 }
 
 .boardContainer{
@@ -25,3 +37,4 @@
 table.boardContainer>tbody>tr>th, table.boardContainer>tbody>tr>td {
        border: 1px solid #d0d0d0;
 }
+

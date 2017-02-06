@@ -18,7 +18,6 @@
 			</div>
 			<div   class="resultDescription"></div>
 		</div>
-		<input type="hidden" id="path" value="${pageContext.request.contextPath}">
 		<jsp:include page="../layout/bottom.jsp" flush="false"/> 
 	</div>
 <script src="${pageContext.request.contextPath}/js/game.js"></script> 

@@ -1,10 +1,11 @@
 @CHARSET "UTF-8";
 
 .wrapper {
-	width: 100%
+	width: 100%;
     box-sizing: border-box;
     border: solid 1px #ddd;
-    border-radius: 5px;	
+    border-radius: 5px;
+    max-height: 980px;	
 }
 
 .head{
@@ -12,14 +13,14 @@
     background-color: whitesmoke;
     color: black;
     margin-bottom: 0;
-    padding: 40px 0 40px;
+    padding: 38px 0 38px;
 }
 
 .headText{
     font-size: 2rem;
     margin: 0.82rem 0 0.656rem 0;
     text-align: center;
-    text-shadow: 9px 8px 0 rgba(0,0,0,0.15);
+    text-shadow: 4px 3px 0 rgba(0,0,0,0.15);
 }
 
 .resultDescrition{
@@ -39,6 +40,7 @@
     text-align: center;
     min-height: 88px;
     background-color: #d6d6d8; 
+    cursor: pointer;
 }
 
 .menudv:hover{
