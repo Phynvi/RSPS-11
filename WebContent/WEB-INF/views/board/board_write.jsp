@@ -19,17 +19,17 @@
 	
 					<tr>
 						<th>작성자</th>
-						<td><input type="text"  id="writer" name="writer"  value="" style="width: 100%"></input></td>
+						<td><input type="text"  class="writeText" id="writer" name="writer"  value=""></input></td>
 						<th>분류</th>
 						<td>공지사항</td>
 					</tr>
 					<tr>
 						<th>제목</th>
-						<td colspan="3"><input type="text"  id="title" name="title"  value="" style="width: 100%"></input></td>
+						<td colspan="3"><input type="text" class="writeText"  id="title" name="title"  value="" ></input></td>
 					</tr>
 					<tr>
 						<th>내용</th>
-						<td colspan="3"><textarea id="content" name="content" style="width: 100%; height: 300px;"></textarea></td>
+						<td colspan="3"><textarea id="content" name="content"  class="writeTextA" ></textarea></td>
 					</tr>
 				</table>
 			</form>
